@@ -9,7 +9,7 @@ const students = require("./data.json")
 /**
  * Function syntax
  */
-
+// Functin declaration: Named function
 function functionName() {
 	/**
 	 * What ever needs to be done
@@ -29,7 +29,7 @@ function getRandomNumber(maxValue) {
 		console.log(error.message)
 	}
 }
-
+console.log(getRandomNumber)
 const firstRandomNumber = getRandomNumber(10)
 const secondRandomNumber = getRandomNumber(500)
 const thirdRandomNumber = getRandomNumber("hey there")
@@ -60,3 +60,23 @@ function oldestStudent(arrayOfStudents) {
 
 const theOldestStudentInTheRoom = oldestStudent(students)
 console.log(theOldestStudentInTheRoom)
+
+// const getAverageAge = function () {}
+
+const sumOfAges = (array) => {
+	let result = 0
+	for (const element of array) {
+		result += element.age
+	}
+	return result
+}
+
+const getAverageAge = (arrayOfStudents) => {
+	const totalAge = sumOfAges(arrayOfStudents)
+	const average = totalAge / arrayOfStudents.length
+
+	return Number(average.toFixed(2))
+	// length of arrayOfStudents => I know the amount of students
+}
+
+console.log(getAverageAge(students))
